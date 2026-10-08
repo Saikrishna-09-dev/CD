@@ -4,10 +4,8 @@ int chars=0, words=0, lines=0;
 %}
 %%
 [a-zA-Z0-9]+ { words++; chars += yyleng; }
-\n
-{ lines++; }
-.
-{ chars++; }
+\n { lines++; }
+. { chars++; }
 %%
 int main() {
 yylex();
